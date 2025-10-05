@@ -1,0 +1,11 @@
+score,time_per_question,difficulty,next_step
+30,12,easy,review
+50,10,easy,review
+70,9,medium,practice
+80,7,medium,advance
+90,6,hard,advance
+60,8,medium,practice
+40,11,easy,review
+75,7,medium,practice
+95,5,hard,advance
+55,9,medium,practice
