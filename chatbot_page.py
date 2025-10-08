@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-BACKEND_URL = "http://localhost:8000/chat"  # update if deployed
+BACKEND_URL = "https://silksonglearning.streamlit.app"  # update if deployed
 
 def chatbot_page():
     st.markdown(
