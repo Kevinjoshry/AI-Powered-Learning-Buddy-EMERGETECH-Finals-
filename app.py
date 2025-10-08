@@ -77,7 +77,7 @@ def title_page():
 def quiz_page():
     st.markdown("<h1 style='text-align:center; color:#1d3557;'>🧩 Take the Quiz</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align:center;'>Answer all questions below to get your AI feedback.</p>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align:center;'>Presented by: Rasco, Jeramieh | Anunciacion, Klein | Santos, Kevin Josh</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align:center;'>Presented By: Rasco, Jeramieh | Anunciacion, Klein | Santos, Kevin Josh</p>", unsafe_allow_html=True)
 
     total_questions = len(questions)
     user_answers = []
@@ -141,7 +141,13 @@ def quiz_page():
 # -----------------------------
 # PAGE ROUTER
 # -----------------------------
-if st.session_state.page == "title":
+page = st.sidebar.radio("Navigate", ["🏠 Title Page", "🧩 Quiz", "💬 Chatbot"])
+
+if page == "🏠 Title Page":
     title_page()
-elif st.session_state.page == "quiz":
+elif page == "🧩 Quiz":
     quiz_page()
+elif page == "💬 Chatbot":
+    from chatbot_page import chatbot_page
+    chatbot_page()
+
