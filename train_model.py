@@ -1,24 +1,45 @@
 import pandas as pd
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
 import joblib
+import random
 
-# Load data
-data = pd.read_csv("training_data.csv")
+# -----------------------------
+# SIMULATE QUIZ DATA
+# -----------------------------
+num_questions = 20  # your actual quiz length
+num_samples = 200   # number of simulated quiz attempts
 
-# Convert text features to numeric codes
-data['difficulty'] = data['difficulty'].astype('category').cat.codes
-data['next_step'] = data['next_step'].astype('category')
+data = []
+for _ in range(num_samples):
+    score = random.randint(0, num_questions)  # 0 to 20 correct
+    time_per_question = random.randint(5, 15)  # seconds
+    difficulty = random.randint(0, 2)  # 0=easy,1=medium,2=hard
 
-# Features (inputs) and labels (outputs)
-X = data[['score', 'time_per_question', 'difficulty']]
-y = data['next_step'].cat.codes
+    # Define recommendation based on raw score
+    if score <= num_questions * 0.3:      # 0–30% → review
+        label = "review"
+    elif score <= num_questions * 0.7:    # 31–70% → practice
+        label = "practice"
+    else:                                 # 71–100% → advance
+        label = "advance"
 
-# Train a small decision tree
-model = DecisionTreeClassifier()
+    data.append([score, time_per_question, difficulty, label])
+
+df = pd.DataFrame(data, columns=["score", "time", "difficulty", "label"])
+
+# -----------------------------
+# TRAIN THE MODEL
+# -----------------------------
+X = df[["score", "time", "difficulty"]]
+y = df["label"]
+
+model = LogisticRegression(multi_class='multinomial', max_iter=500)
 model.fit(X, y)
 
-# Save model and category mappings
+# -----------------------------
+# SAVE MODEL AND LABELS
+# -----------------------------
 joblib.dump(model, "model.pkl")
-joblib.dump(data['next_step'].cat.categories, "labels.pkl")
+joblib.dump(["review", "practice", "advance"], "labels.pkl")
 
-print("✅ Model trained and saved!")
+print("✅ AI model trained for 20-question quiz!")

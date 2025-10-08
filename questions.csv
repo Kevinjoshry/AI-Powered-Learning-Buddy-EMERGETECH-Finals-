@@ -1,21 +1,21 @@
-question,optionA,optionB,optionC,optionD,answer
-What is 2 + 2?,2,3,4,5,4
-Which planet is known as the Red Planet?,Earth,Venus,Mars,Jupiter,Mars
-What is the capital of France?,Rome,Paris,London,Berlin,Paris
-Which gas do plants absorb?,Oxygen,Carbon Dioxide,Hydrogen,Nitrogen,Carbon Dioxide
-Who developed the theory of relativity?,Isaac Newton,Albert Einstein,Galileo Galilei,Stephen Hawking,Albert Einstein
-Which is the largest ocean?,Atlantic Ocean,Indian Ocean,Pacific Ocean,Arctic Ocean,Pacific Ocean
-What is the boiling point of water?,50°C,100°C,75°C,150°C,100°C
-Which part of the plant conducts photosynthesis?,Root,Stem,Leaf,Flower,Leaf
-What language is primarily spoken in Brazil?,Spanish,Portuguese,French,English,Portuguese
-Which of these is a prime number?,9,12,13,15,13
-What is the smallest unit of life?,Cell,Atom,Molecule,Tissue,Cell
-Which organ pumps blood throughout the body?,Lungs,Heart,Brain,Stomach,Heart
-What does CPU stand for?,Central Processing Unit,Computer Personal Unit,Central Program Utility,Control Power Unit,Central Processing Unit
-Which programming language is known for web development?,Python,HTML,C++,C#,HTML
-How many continents are there on Earth?,5,6,7,8,7
-What is the chemical symbol for gold?,Go,Au,Ag,Gd,Au
-Which planet is the largest in our solar system?,Earth,Saturn,Jupiter,Mars,Jupiter
-What force keeps us on the ground?,Magnetism,Gravity,Friction,Pressure,Gravity
-Which device measures temperature?,Thermometer,Barometer,Hygrometer,Altimeter,Thermometer
-Which number is the square root of 49?,5,6,7,8,7
+question,optionA,optionB,optionC,optionD,answer,difficulty
+What is 2+2?,3,4,5,6,4,0
+Capital of France?,Paris,Rome,Berlin,Madrid,Paris,1
+What color do you get by mixing red and blue?,Purple,Green,Orange,Yellow,Purple,1
+Which planet is known as the Red Planet?,Earth,Mars,Jupiter,Venus,Mars,1
+What is the square root of 16?,2,4,8,6,4,0
+Who wrote Hamlet?,Shakespeare,Hemingway,Tolkien,Dickens,Shakespeare,2
+Water boils at what temperature in Celsius?,90,100,80,120,100,0
+Which gas do humans need to breathe?,Oxygen,Carbon Dioxide,Nitrogen,Helium,Oxygen,0
+What is the largest ocean?,Atlantic,Pacific,Indian,Arctic,Pacific,1
+Which organ pumps blood?,Lungs,Liver,Heart,Kidney,Heart,0
+What is the chemical symbol for Gold?,Au,Ag,G,Go,Au,2
+Which continent is Egypt in?,Africa,Asia,Europe,South America,Africa,1
+What is 10*10?,100,90,110,120,100,0
+Who painted the Mona Lisa?,Da Vinci,Picasso,Van Gogh,Michelangelo,Da Vinci,2
+What is the freezing point of water in Celsius?,0,100,32,-1,0,0
+Which is the fastest land animal?,Cheetah,Lion,Horse,Eagle,Cheetah,1
+What language do they speak in Brazil?,Portuguese,Spanish,French,English,Portuguese,1
+What is the largest planet in our solar system?,Jupiter,Saturn,Earth,Mars,Jupiter,1
+How many sides does a triangle have?,3,4,5,6,3,0
+What is the main gas in Earth's atmosphere?,Nitrogen,Oxygen,Carbon Dioxide,Helium,Nitrogen,0
