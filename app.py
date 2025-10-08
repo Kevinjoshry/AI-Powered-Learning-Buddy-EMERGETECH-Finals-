@@ -94,7 +94,7 @@ def title_page():
 def quiz_page():
     st.markdown("<h1 style='text-align:center; color:#1d3557;'>🧩 Take the Quiz</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align:center;'>Answer all questions below to get your AI feedback.</p>", unsafe_allow_html=True)
-    st.markdown("---")
+    st.markdown("<p style='text-align:center;'>Presented by: Rasco, Jeramieh | Anunciacion, Klein | Santos, Kevin Josh</p>", unsafe_allow_html=True)
 
     score = 0
     user_answers = []
