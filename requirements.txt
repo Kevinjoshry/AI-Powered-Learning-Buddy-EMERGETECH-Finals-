@@ -17,7 +17,6 @@ google-api-core==2.25.2
 google-api-python-client==2.184.0
 google-auth==2.41.1
 google-auth-httplib2==0.2.0
-google-genai==1.41.0
 google-generativeai==0.8.5
 googleapis-common-protos==1.70.0
 grpcio==1.75.1
@@ -39,7 +38,7 @@ packaging==25.0
 pandas==2.3.3
 pillow==11.3.0
 proto-plus==1.26.1
-protobuf>=4.25.3,<5.0.0
+protobuf>=5.26.1,<6.0.0
 pyarrow==21.0.0
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
