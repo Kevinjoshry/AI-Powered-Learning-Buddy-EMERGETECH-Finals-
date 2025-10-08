@@ -160,7 +160,14 @@ def chatbot_page():
 # -----------------------------
 # PAGE ROUTER
 # -----------------------------
-page = st.sidebar.radio("Navigate", ["🏠 Title Page", "🧩 Quiz", "💬 Chatbot"])
+page = st.sidebar.radio(
+    "Navigate",
+    ["🏠 Title Page", "🧩 Quiz", "💬 Chatbot"],
+    index=["🏠 Title Page", "🧩 Quiz", "💬 Chatbot"].index(
+        {"title": "🏠 Title Page", "quiz": "🧩 Quiz", "chatbot": "💬 Chatbot"}[st.session_state.page]
+        if st.session_state.page in ["title", "quiz", "chatbot"] else "🏠 Title Page"
+    )
+)
 
 if page == "🏠 Title Page":
     title_page()
