@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-BACKEND_URL = "http://localhost:8501/chat"  # update if deployed
+BACKEND_URL = "http://localhost:8000/chat"  # update if deployed
 
 def chatbot_page():
     st.markdown(
@@ -19,15 +19,9 @@ def chatbot_page():
         role = chat["role"]
         content = chat["content"]
         if role == "user":
-            st.markdown(
-                f"<div style='text-align:right; background:#a8dadc; color:#1d3557; padding:10px; border-radius:10px; margin:5px 0;'>{content}</div>",
-                unsafe_allow_html=True
-            )
+            st.markdown(f"<div style='text-align:right; background:#a8dadc; color:#1d3557; padding:10px; border-radius:10px; margin:5px 0;'>{content}</div>", unsafe_allow_html=True)
         else:
-            st.markdown(
-                f"<div style='text-align:left; background:#f1faee; color:#1d3557; padding:10px; border-radius:10px; margin:5px 0;'>{content}</div>",
-                unsafe_allow_html=True
-            )
+            st.markdown(f"<div style='text-align:left; background:#f1faee; color:#1d3557; padding:10px; border-radius:10px; margin:5px 0;'>{content}</div>", unsafe_allow_html=True)
 
     # Input field
     user_message = st.text_input("Type your message:", key="user_input")
@@ -50,16 +44,12 @@ def chatbot_page():
                     bot_reply = response.json().get("reply", "No reply from AI.")
                     st.session_state.chat_history.append({"role": "assistant", "content": bot_reply})
                 else:
-                    st.session_state.chat_history.append(
-                        {"role": "assistant", "content": f"Error: {response.status_code}"}
-                    )
+                    st.session_state.chat_history.append({"role": "assistant", "content": f"Error: {response.status_code}"})
 
             except Exception as e:
-                st.session_state.chat_history.append(
-                    {"role": "assistant", "content": f"⚠️ Connection error: {e}"}
-                )
+                st.session_state.chat_history.append({"role": "assistant", "content": f"⚠️ Connection error: {e}"})
 
-            st.rerun()  # ✅ updated from st.experimental_rerun()
+            st.rerun()
 
     if st.button("🔄 Clear Chat"):
         st.session_state.chat_history = []

@@ -166,12 +166,6 @@ if page == "🏠 Title Page":
     title_page()
 elif page == "🧩 Quiz":
     quiz_page()
-<<<<<<< HEAD
 elif page == "💬 Chatbot":
     from chatbot_page import chatbot_page
     chatbot_page()
-
-=======
-elif st.session_state.page == "chatbot":
-    chatbot_page()
->>>>>>> 6976fbadf0a18cea05faa8450da3d083f2d33852
