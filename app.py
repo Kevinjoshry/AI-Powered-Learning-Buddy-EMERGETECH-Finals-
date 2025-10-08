@@ -46,20 +46,15 @@ def title_page():
         """,
         unsafe_allow_html=True
     )
-    
-left, center, right = st.columns([1, 2, 1])
 
-    with center:
-        c1, c2 = st.columns(2)
-        with c1:
-            if st.button("🚀 Start Quiz", key="start_quiz"):
-                st.session_state.page = "quiz"
-                st.rerun()
-        with c2:
-            if st.button("💬 Go to Chatbot", key="go_chatbot"):
-                st.session_state.page = "chatbot"
-                st.rerun()
-                
+    if st.button("🚀 Start Quiz", key="start_quiz"):
+        st.session_state.page = "quiz"
+        st.rerun()
+
+    if st.button("💬 Go to Chatbot", key="go_chatbot"):
+        st.session_state.page = "chatbot"
+        st.rerun()
+
 # -----------------------------
 # QUIZ PAGE
 # -----------------------------
