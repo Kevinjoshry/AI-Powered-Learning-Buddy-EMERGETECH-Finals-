@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-BACKEND_URL = "https://silksong-backend.onrender.com/chat"  # update if deployed
+BACKEND_URL = "https://ai-powered-learning-buddy-emergetech-c1qp.onrender.com/chat"  # update if deployed
 
 def chatbot_page():
     st.markdown(
