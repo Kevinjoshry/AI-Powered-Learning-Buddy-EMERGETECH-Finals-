@@ -1,12 +1,13 @@
 # server.py
 from fastapi import FastAPI
 from pydantic import BaseModel
-from google import genai
+import google.generativeai as genai
+
+# Configure API key
+API_KEY = "AIzaSyA4skjWkL4Snn-_tWFYLoRIy2XHnC_rAoo"
+genai.configure(api_key=API_KEY)
 
 app = FastAPI()
-
-API_KEY = "AIzaSyA4skjWkL4Snn-_tWFYLoRIy2XHnC_rAoo"
-client = genai.Client(api_key=API_KEY)
 
 class ChatRequest(BaseModel):
     message: str
@@ -15,17 +16,19 @@ class ChatRequest(BaseModel):
 @app.post("/chat")
 async def chat(req: ChatRequest):
     try:
-        # Build prompt from chat history
+        # Combine history and user message
         history_text = "\n".join([f"{h['role']}: {h['content']}" for h in req.history])
         full_prompt = f"{history_text}\nuser: {req.message}"
 
-        # ✅ Use correct model name for the new SDK
-        response = client.models.generate_content(
-            model="models/gemini-1.5-flash-latest",
-            contents=full_prompt
-        )
+        # ✅ Use correct model initialization
+        model = genai.GenerativeModel("models/gemini-2.5-flash")
 
-        reply = response.text
+        # ✅ Generate AI response
+        response = model.generate_content(full_prompt)
+
+        # Extract text safely
+        reply = response.text if hasattr(response, "text") else "⚠️ No text returned from model."
+
         return {"reply": reply}
 
     except Exception as e:
